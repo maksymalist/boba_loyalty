@@ -48,7 +48,10 @@ export default function Home() {
         />
         <div className="mt-32">
           <h1 className="mb-8 text-2xl">Pas de boba à réclamer :(</h1>
-          <Spline scene="https://prod.spline.design/Jh1UFzqccFhPMyBJ/scene.splinecode" />
+          <Spline
+            style={{ height: "500px" }}
+            scene="https://prod.spline.design/Jh1UFzqccFhPMyBJ/scene.splinecode"
+          />
         </div>
       </main>
     </>
