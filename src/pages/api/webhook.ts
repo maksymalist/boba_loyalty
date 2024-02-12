@@ -57,12 +57,16 @@ const get_order_by_id = async (order_id: string): Promise<Order> => {
 };
 
 const create_free_boba = async (cid: string) => {
-  await db.freeBobaClaim.create({
-    data: {
-      customerId: cid,
-      used: false,
-    },
-  });
+  try {
+    await db.freeBobaClaim.create({
+      data: {
+        customerId: cid,
+        used: false,
+      },
+    });
+  } catch (error) {
+    console.log("error", (error as Error).message);
+  }
 };
 
 const get_orders_by_customer = async (cid: string): Promise<SquareOrders> => {
