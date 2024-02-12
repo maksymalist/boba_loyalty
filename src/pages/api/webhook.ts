@@ -35,8 +35,6 @@ export default async function handler(
     const event = req.body as OrderCreatedEvent;
 
     if (event?.type === "order.created") {
-      console.log("Order created", event.data.object.order_created.order_id);
-
       const headers = {
         "Square-Version": "2024-01-18",
         Authorization: `Bearer ${process.env.SQUARE_SECRET}`,
@@ -44,6 +42,7 @@ export default async function handler(
       };
 
       const order_id = event.data.id;
+      console.log("got the orderid", order_id);
       const url = `https://connect.squareup.com/v2/orders/${order_id}`;
 
       const config: AxiosRequestConfig = {
@@ -52,14 +51,19 @@ export default async function handler(
         headers,
       };
 
+      console.log("config", config);
+
       const res = await axios(config);
+      console.log("res", res);
       const order = res.data as Order;
+      console.log("order", order);
 
       console.log(order);
     }
 
     return res.status(200).json({ message: "Hello" });
   } catch (error) {
+    console.log("error", error);
     return res.status(405).json({ message: error });
   }
 }
