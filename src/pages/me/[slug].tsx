@@ -11,7 +11,7 @@ import Spline from "@splinetool/react-spline";
 import ClaimFree from "@/components/ClaimFreeBoba";
 import ClaimFreeBoba from "@/components/ClaimFreeBoba";
 
-export default function Home() {
+export default function Me() {
   // get slug from the URL
 
   const { slug } = useRouter().query;

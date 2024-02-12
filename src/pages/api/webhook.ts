@@ -120,7 +120,7 @@ export default async function handler(
     // check if event is order.created
     if (event?.type === "order.created") {
       //given the order id from the event get the order
-      const order_id = "ukTtcEYCrQio77xW0h3reygeV"; //TODO remove this event.data.id;
+      const order_id = event.data.id;
       console.log("got the orderid", order_id);
 
       const order = await get_order_by_id(order_id);
@@ -134,7 +134,7 @@ export default async function handler(
         const data = await get_orders_by_customer(cid);
 
         //if the number of orders is a multiple of 5 then send a free boba
-        const num_orders = 5; // data?.orders.length ?? 0;
+        const num_orders = data?.orders.length ?? 0;
 
         if (num_orders % 5 === 0) {
           console.log("send a free boba");
