@@ -30,7 +30,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse,
 ) {
-  if (req.method === "POST") {
+  try {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const event = req.body as OrderCreatedEvent;
 
@@ -59,7 +59,7 @@ export default async function handler(
     }
 
     return res.status(200).json({ message: "Hello" });
-  } else {
-    return res.status(405).json({ message: "Method Not Allowed" });
+  } catch (error) {
+    return res.status(405).json({ message: error });
   }
 }
