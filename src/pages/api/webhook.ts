@@ -34,6 +34,8 @@ export default async function handler(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const event = req.body as OrderCreatedEvent;
 
+    const signature = req.headers["x-square-hmacsha256-signature"] as string;
+
     if (event?.type === "order.created") {
       const headers = {
         "Square-Version": "2024-01-18",
