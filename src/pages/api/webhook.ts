@@ -137,7 +137,7 @@ export default async function handler(
           await create_free_boba(cid);
         } else {
           const boba_left = 5 - (num_orders % 5);
-          console.log("no free boba. Left:", boba_left);
+          console.log("no free boba.  Left:", boba_left);
         }
       }
     }
