@@ -43,7 +43,7 @@ export default async function handler(
         "Content-Type": "application/json",
       };
 
-      const order_id = event.data.id;
+      const order_id = "ukTtcEYCrQio77xW0h3reygeV"; // event.data.id;
       console.log("got the orderid", order_id);
       const url = `https://connect.squareup.com/v2/orders/${order_id}`;
 
