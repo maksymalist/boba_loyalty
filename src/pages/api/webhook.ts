@@ -51,7 +51,7 @@ const get_order_by_id = async (order_id: string): Promise<Order> => {
   };
 
   const res = await axios(config);
-  const order = res.data as Order;
+  const order = (res.data as { order: Order }).order;
 
   return order;
 };
