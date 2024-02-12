@@ -26,10 +26,10 @@ type OrderCreatedEvent = {
 };
 
 // isFromSquare generates a signature from the url and body and compares it to the Square signature header.
-const isFromSquare = (signature: string, body: string) => {
+const isFromSquare = (signature: string, body: string): boolean => {
   return WebhooksHelper.isValidWebhookEventSignature(
-    signature,
     body,
+    signature,
     process.env.WH_SIGNATURE_KEY ? process.env.WH_SIGNATURE_KEY : "",
     process.env.NOTIFICATION_URL ? process.env.NOTIFICATION_URL : "",
   );
