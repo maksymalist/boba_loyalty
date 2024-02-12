@@ -90,23 +90,25 @@ export const customerRouter = createTRPCRouter({
         };
       }
     }),
-
-  create: publicProcedure
-    .input(z.object({ name: z.string().min(1) }))
-    .mutation(async ({ ctx, input }) => {
-      // simulate a slow db call
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-
-      return ctx.db.post.create({
-        data: {
-          name: input.name,
+  get_free_boba_claims: publicProcedure
+    .input(z.object({ cid: z.string() }))
+    .query(({ ctx, input }) => {
+      const { cid } = input;
+      return ctx.db.freeBobaClaim.findMany({
+        where: {
+          customerId: cid,
         },
       });
     }),
 
-  getLatest: publicProcedure.query(({ ctx }) => {
-    return ctx.db.post.findFirst({
-      orderBy: { createdAt: "desc" },
-    });
-  }),
+  redeem_voucher: publicProcedure
+    .input(z.object({ cid: z.string() }))
+    .query(({ ctx, input }) => {
+      const { cid } = input;
+      return ctx.db.freeBobaClaim.findMany({
+        where: {
+          customerId: cid,
+        },
+      });
+    }),
 });
