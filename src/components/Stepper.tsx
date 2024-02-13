@@ -16,7 +16,15 @@ function Step(props: {
         <div
           className={`mx-[-1px] flex ${props.final ? "h-12 w-12" : "h-10 w-10"} shrink-0 items-center justify-center rounded-full border-2 ${props.final && "bg-green-500"} ${!completed && !active && !props.final && "border-gray-300 bg-gray-300"} border-green-500 p-1.5`}
         >
-          {props.final ? (
+          {props.final && active ? (
+            <svg
+              className="h-5 w-5 animate-bounce fill-white"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 320 512"
+            >
+              <path d="M112 48a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm40 304V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V256.9L59.4 304.5c-9.1 15.1-28.8 20-43.9 10.9s-20-28.8-10.9-43.9l58.3-97c17.4-28.9 48.6-46.6 82.3-46.6h29.7c33.7 0 64.9 17.7 82.3 46.6l58.3 97c9.1 15.1 4.2 34.8-10.9 43.9s-34.8 4.2-43.9-10.9L232 256.9V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V352H152z" />
+            </svg>
+          ) : props.final ? (
             <svg
               width="23"
               height="35"
