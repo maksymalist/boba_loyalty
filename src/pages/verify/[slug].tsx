@@ -242,14 +242,14 @@ const VerificationScreen = () => {
                 </defs>
               </svg>
               <h1 className="mt-10 text-center text-4xl">
-                Merci d'avoir magasiné avec nous!
+                Merci {"d'avoir"} magasiné avec nous!
               </h1>
               <Link
                 className="mt-10 rounded-full bg-green-500 p-4 hover:bg-green-700"
                 href="/"
               >
                 <span className="text-md font-bold text-white">
-                  Retour à l'acceuil
+                  Retour à {"l'acceuil"}
                 </span>
               </Link>
             </div>
@@ -430,14 +430,14 @@ const VerificationScreen = () => {
               </svg>
 
               <h1 className="mt-10 text-center text-4xl">
-                Oh non! Ce coupon n'est pas valide 😢
+                Oh non! Ce coupon {"n'est pas valide 😢"}
               </h1>
               <Link
                 className="mt-10 rounded-full bg-black p-4 hover:bg-slate-700"
                 href="/"
               >
                 <span className="text-md font-bold text-white">
-                  Retour à l'acceuil 😔
+                  Retour à {"l'acceuil 😔"}
                 </span>
               </Link>
             </div>
@@ -778,14 +778,14 @@ const VerificationScreen = () => {
           </svg>
 
           <h1 className="mt-10 text-center text-4xl">
-            Oh non! Ce coupon n'est pas valide 😢
+            Oh non! Ce coupon {"n'est pas valide 😢"}
           </h1>
           <Link
             className="mt-10 rounded-full bg-black p-4 hover:bg-slate-700"
             href="/"
           >
             <span className="text-md font-bold text-white">
-              Retour à l'acceuil 😔
+              Retour à {"l'acceuil 😔"}
             </span>
           </Link>
         </div>
